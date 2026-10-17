@@ -1,0 +1,1079 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-10-17",
+  "language": "zh-CN",
+  "license": "CC0-1.0",
+  "source": {
+    "name": "free-ai-api-hubs.md",
+    "provided_by": "仓库维护者提供的 AI 整理稿",
+    "compiled_at": "2026-10-15",
+    "sha256": "77b3fd360be8d753adf1b5c5400eeb8482420b8f02590a683e3e0fb024c552f4",
+    "note": "原稿是线索，不视为独立核验；公开版重新表述事实并链接官方来源，不复制第三方全文。"
+  },
+  "verification_policy": "documented 仅指明确限定的文档事实；partial 指部分事实已核实；unverified 指核心免费权益未核实。last_verified_at 仅适用于 scope，不表示整条已验证。未登录、未调用推理 API、未验证控制台权益。未知不等于 false；不承诺永久免费。",
+  "categories": [
+    {
+      "id": "free_tier",
+      "label": "当前免费档 / 免费模型"
+    },
+    {
+      "id": "trial",
+      "label": "新人 / 评估 / 限时试用"
+    },
+    {
+      "id": "conditional",
+      "label": "附带购买条件的免费服务"
+    },
+    {
+      "id": "unverified",
+      "label": "免费资格待核实"
+    },
+    {
+      "id": "non_free_reference",
+      "label": "非免费主列表 · 对照参考"
+    },
+    {
+      "id": "retired",
+      "label": "已退役"
+    },
+    {
+      "id": "gateway",
+      "label": "自建网关 · 不提供算力"
+    }
+  ],
+  "platforms": [
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "kind": "hosted_service",
+      "category": "free_tier",
+      "offer": "提供 :free 模型及 openrouter/free 免费模型路由；并非所有模型免费。",
+      "validity": "按日/分钟限流；无永久承诺。",
+      "claim_steps": "注册账号 → 创建 Key → 选择明确标价为 0 的免费模型。",
+      "requirements": "免费模型共享账号额度；余额为负也可能影响调用。",
+      "regions": "地区资格与网络可达性待核实；不保证中国大陆可用。",
+      "payment_method_required": null,
+      "payment_notes": "未核实绑卡条件；提高免费日限可能需要购买积分。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://openrouter.ai/api/v1"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方免费模型页和限流页可读；限流表数字未被完整提取。",
+        "pending": [
+          "原稿 20 RPM、50 次/日及购满约 $10 后 1000 次/日未完成当前数值核验，不作保证。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "官网",
+          "url": "https://openrouter.ai/"
+        },
+        {
+          "label": "`:free` 说明",
+          "url": "https://openrouter.ai/docs/guides/routing/model-variants/free"
+        },
+        {
+          "label": "限流",
+          "url": "https://openrouter.ai/docs/api_reference/limits"
+        },
+        {
+          "label": "Free Router",
+          "url": "https://openrouter.ai/openrouter/free"
+        }
+      ]
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face Inference Providers",
+      "kind": "hosted_service",
+      "category": "non_free_reference",
+      "offer": "免费账号无月赠积分；PRO 每月含 $2 计算积分，属于付费订阅权益。",
+      "validity": "订阅积分按月；免费账号需购积分或自备上游 Key。",
+      "claim_steps": "注册 → 选择购买积分、订阅或自备供应商 Key。",
+      "requirements": "HF Token 需包含 Inference Providers 权限；自备 Key 由上游计费。",
+      "regions": "支持地区和大陆可达性待核实。",
+      "payment_method_required": null,
+      "payment_notes": "需购买额度不等于必须绑定银行卡；支付方式待核实。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://router.huggingface.co/v1"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方计费页确认免费账号无月赠积分及 PRO $2/月。",
+        "pending": [
+          "账户准入、地区及支付方式。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Inference Providers",
+          "url": "https://huggingface.co/docs/api-inference/index"
+        },
+        {
+          "label": "计费",
+          "url": "https://huggingface.co/docs/inference-providers/en/pricing"
+        }
+      ]
+    },
+    {
+      "id": "bai",
+      "name": "B.AI（Bank of AI）",
+      "kind": "hosted_service",
+      "category": "trial",
+      "offer": "积分制聚合；1 USD 对应 1,000,000 Credits；注册或活动赠额数量未统一确认。",
+      "validity": "免费赠送积分发放后 30 天失效；折扣不是免费额度。",
+      "claim_steps": "注册 → 查看实际赠额与到期日 → 创建 API Key。",
+      "requirements": "赠额取决于账号和活动；充值赠额不能当作无成本注册赠额。",
+      "regions": "服务支持地区待核实。",
+      "payment_method_required": null,
+      "payment_notes": "原稿列银行卡、微信、支付宝等支付渠道；未核实，不代表领取赠额需要绑卡。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://api.b.ai/v1"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方定价页确认积分换算和免费赠额 30 天期限。",
+        "pending": [
+          "当前注册实际赠额、活动资格和支付渠道。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "官网",
+          "url": "https://b.ai/"
+        },
+        {
+          "label": "聊天",
+          "url": "https://chat.b.ai/chat"
+        },
+        {
+          "label": "API",
+          "url": "https://docs.b.ai/llmservice/api/"
+        },
+        {
+          "label": "定价",
+          "url": "https://docs.b.ai/llmservice/pricing-and-usage/"
+        },
+        {
+          "label": "促销",
+          "url": "https://docs.b.ai/llmservice/promotions-and-pricing-notices/"
+        }
+      ]
+    },
+    {
+      "id": "siliconflow",
+      "name": "硅基流动 SiliconFlow",
+      "kind": "hosted_service",
+      "category": "free_tier",
+      "offer": "实名后可调用平台标为免费的模型，费用为 0；免费模型限流固定。",
+      "validity": "当前免费模型政策，无永久承诺；注册赠额另看活动。",
+      "claim_steps": "注册国内云 → 完成身份验证 → 在模型列表选择 0 元模型 → 创建 Key。",
+      "requirements": "国内免费模型需身份验证；付费模型按消费等级调整限流。",
+      "regions": "国内站与国际站分开；国际站规则不可直接套用。",
+      "payment_method_required": null,
+      "payment_notes": "官方已确认身份验证要求；是否绑卡未核实。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://api.siliconflow.cn/v1"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方限流页确认免费模型费用为 0、需验证身份、限流固定。",
+        "pending": [
+          "具体免费模型列表、注册赠额金额和有效期。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "国内云",
+          "url": "https://cloud.siliconflow.cn/"
+        },
+        {
+          "label": "国际",
+          "url": "https://www.siliconflow.com/"
+        },
+        {
+          "label": "限流(中)",
+          "url": "https://api-docs.siliconflow.cn/docs/userguide/faqs/rate-limit-and-upgradation"
+        },
+        {
+          "label": "限流(英)",
+          "url": "https://docs.siliconflow.com/en/userguide/rate-limits/rate-limit-and-upgradation"
+        }
+      ]
+    },
+    {
+      "id": "sensenova",
+      "name": "商汤日日新 SenseNova",
+      "kind": "hosted_service",
+      "category": "unverified",
+      "offer": "原稿称 Token Plan 公测 ¥0/月；当前公测价格及资格待核实。",
+      "validity": "公测可能结束；无永久承诺。",
+      "claim_steps": "进入官方 Token Plan/控制台确认是否仍开放，再创建专属 Key。",
+      "requirements": "原稿所列约 6 万积分/5 小时为社区说法，不能视为官方额度。",
+      "regions": "中国大陆平台；具体地区与实名条件待核实。",
+      "payment_method_required": null,
+      "payment_notes": "是否绑卡或需要充值待核实。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://token.sensenova.cn/v1"
+      ],
+      "api_notes": "原稿给出 https://token.sensenova.cn/v1；仅接入线索，未确认其当前适用套餐。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "unverified",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": null,
+        "scope": "Token Plan 页面抓取失败，未确认当前规则。",
+        "pending": [
+          "公测状态、官方额度、有效期、认证及接入地址。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "平台",
+          "url": "https://platform.sensenova.cn/"
+        },
+        {
+          "label": "Token Plan",
+          "url": "https://www.sensenova.cn/token-plan"
+        },
+        {
+          "label": "兼容模式说明",
+          "url": "https://www.sensecore.cn/help/docs/model-as-a-service/nova/overview/compatible-mode"
+        }
+      ]
+    },
+    {
+      "id": "modelscope",
+      "name": "魔搭 ModelScope API-Inference",
+      "kind": "hosted_service",
+      "category": "unverified",
+      "offer": "原稿称有免费推理额度；2000 次/天与每日魔粒是不同历史口径，当前规则待核实。",
+      "validity": "刷新周期、单位、有效期以当前控制台为准。",
+      "claim_steps": "注册魔搭 → 查看 API-Inference 资格、额度和模型列表 → 创建 Token。",
+      "requirements": "原稿称需绑定阿里云并实名；当前要求待核实。",
+      "regions": "国内平台；不保证其他地区可用。",
+      "payment_method_required": null,
+      "payment_notes": "是否绑卡未核实。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://api-inference.modelscope.cn/v1"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "unverified",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": null,
+        "scope": "官方文档地址可访问但未提取到正文。",
+        "pending": [
+          "当前额度计量、日限、阿里云绑定/实名要求。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "社区",
+          "url": "https://www.modelscope.cn/"
+        },
+        {
+          "label": "API-Inference 文档",
+          "url": "https://www.modelscope.cn/docs/model-service/API-Inference"
+        }
+      ]
+    },
+    {
+      "id": "groq",
+      "name": "GroqCloud",
+      "kind": "hosted_service",
+      "category": "free_tier",
+      "offer": "存在 Free Plan；例：openai/gpt-oss-20b 与 120b 为 30 RPM、1000 RPD、8000 TPM、200000 TPD。",
+      "validity": "按模型与组织限流；不是永久服务承诺。",
+      "claim_steps": "注册 GroqCloud → 创建 Key → 在组织 Limits 页核对目标模型。",
+      "requirements": "不同模型限额不同；RPM/RPD 为每分钟/每日请求数，TPM/TPD 为对应 Token 数。",
+      "regions": "支持地区与中国大陆可用性待核实。",
+      "payment_method_required": null,
+      "payment_notes": "原稿称通常无需绑卡；本轮未验证注册流程。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://api.groq.com/openai/v1"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方限流页确认 Free Plan 及所列两个模型示例。",
+        "pending": [
+          "账号准入、绑卡与地区限制。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "GroqCloud",
+          "url": "https://groq.com/groqcloud"
+        },
+        {
+          "label": "限流",
+          "url": "https://console.groq.com/docs/rate-limits"
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "name": "Google AI Studio / Gemini API",
+      "kind": "hosted_service",
+      "category": "free_tier",
+      "offer": "新账号从 Free Tier 开始，只覆盖部分模型；实际限额在 AI Studio 查看。",
+      "validity": "随模型/项目变化；不保证永久。",
+      "claim_steps": "在支持地区注册 → 创建项目与 API Key → 保持 Free Tier 并确认模型价格。",
+      "requirements": "付费升级需关联账单账号并按规则预付；免费与付费项目的 Key 要区分。",
+      "regions": "仅官方支持地区；参阅地区清单，不能把网络可达等同于有资格使用。",
+      "payment_method_required": false,
+      "payment_notes": "Free Tier 无需开通付费账单；升级付费另需账单和支付设置。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://generativelanguage.googleapis.com/v1beta/openai/"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费服务的数据使用规则需阅读官方条款；不要发送私人凭据或敏感数据。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方 billing 页确认 Free Tier；已访问支持地区清单。",
+        "pending": [
+          "具体模型配额、账号资格、免费服务数据使用条款。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Billing",
+          "url": "https://ai.google.dev/gemini-api/docs/billing"
+        },
+        {
+          "label": "Rate limits",
+          "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+        },
+        {
+          "label": "OpenAI 兼容",
+          "url": "https://ai.google.dev/gemini-api/docs/openai"
+        },
+        {
+          "label": "支持地区",
+          "url": "https://ai.google.dev/gemini-api/docs/available-regions"
+        }
+      ]
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare Workers AI",
+      "kind": "hosted_service",
+      "category": "free_tier",
+      "offer": "Workers AI 每日免费 10,000 Neurons；部分模型要求付费方式，不在普通免费范围内。",
+      "validity": "每日 00:00 UTC 重置；超过免费额度需付费计划。",
+      "claim_steps": "注册 Cloudflare → 开通 Workers AI → 使用免费额度适用的模型 → 在控制台监测消耗。",
+      "requirements": "Neurons 不能直接等同于 Token 数；具体模型单价不同。",
+      "regions": "大陆可达性与账号地区资格待核实。",
+      "payment_method_required": null,
+      "payment_notes": "部分模型需 Workers Paid 或 AI Gateway 预付积分；普通免费模型绑卡要求未实测。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "支持 REST 和 Workers 绑定；从官方文档获取 Account ID 和端点。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方价格页确认 10,000 Neurons/日、重置时间及部分模型的付费要求。",
+        "pending": [
+          "具体模型免费资格及注册要求。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "定价",
+          "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "nvidia-nim",
+      "name": "NVIDIA NIM（build.nvidia.com）",
+      "kind": "hosted_service",
+      "category": "unverified",
+      "offer": "原稿称 build.nvidia.com 提供开发试用/预览；本轮未确认统一免费额度。",
+      "validity": "试用期限与限制待核实。",
+      "claim_steps": "注册 NVIDIA 账号 → 在目标模型页面确认试用协议、额度和 Key 获取入口。",
+      "requirements": "预览服务不等于生产授权。",
+      "regions": "账号支持地区待核实。",
+      "payment_method_required": null,
+      "payment_notes": "支付或手机号验证要求待核实。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "按目标模型页面确认 API 端点；本项目不提供统一 NIM 端点。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "unverified",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": null,
+        "scope": "官方首页可读，但不足以证明具体试用权益。",
+        "pending": [
+          "实际额度、期限、模型使用权及生产部署许可。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "build.nvidia.com",
+          "url": "https://build.nvidia.com/"
+        },
+        {
+          "label": "Models",
+          "url": "https://build.nvidia.com/models"
+        }
+      ]
+    },
+    {
+      "id": "bigmodel",
+      "name": "智谱 BigModel",
+      "kind": "hosted_service",
+      "category": "unverified",
+      "offer": "原稿列 GLM-4.7-Flash 与 GLM-4.6V-Flash 输入/输出/缓存免费；当前价格未完成核实。",
+      "validity": "无永久承诺；免费模型名单可变。",
+      "claim_steps": "注册 BigModel → 核对对应 Flash 型号当前价格 → 创建 Key。",
+      "requirements": "原稿称常需手机号/实名，当前要求待核实；不要把 FlashX 等相似名称当免费型号。",
+      "regions": "中国大陆平台；其他地区资格待核实。",
+      "payment_method_required": null,
+      "payment_notes": "是否绑卡待核实。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://open.bigmodel.cn/api/paas/v4"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "unverified",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": null,
+        "scope": "定价页未提取到有效正文；模型文档未取得足够价格证据。",
+        "pending": [
+          "两个 Flash 型号的当前输入、输出及缓存价格，实名要求。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "开放平台",
+          "url": "https://open.bigmodel.cn/"
+        },
+        {
+          "label": "定价页",
+          "url": "https://open.bigmodel.cn/pricing"
+        }
+      ]
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "kind": "hosted_service",
+      "category": "free_tier",
+      "offer": "Free mode 可创建 API Key，使用含在计划中的月度用量；没有统一公开数值。",
+      "validity": "按月；可用量看组织 Limits。",
+      "claim_steps": "注册 → 使用默认 Free mode → 创建 Key → 查看 Admin/API/Limits。",
+      "requirements": "用量可能在 Studio、API、Vibe 间共享；开启按量付费后额外用量消耗预付积分。",
+      "regions": "地区资格与大陆可达性待核实。",
+      "payment_method_required": null,
+      "payment_notes": "原稿称通常可不绑卡试用；未验证注册过程。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方 Usage/Subscriptions 页确认 Free mode 与月度用量。",
+        "pending": [
+          "实际月额度、绑卡、地区和用途条款。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Usage & limits",
+          "url": "https://docs.mistral.ai/admin/billing-usage/usage-limits"
+        },
+        {
+          "label": "Subscriptions",
+          "url": "https://docs.mistral.ai/admin/billing-usage/subscriptions"
+        }
+      ]
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "kind": "hosted_service",
+      "category": "trial",
+      "offer": "Trial Key 每月 1000 次 API 调用；所列 Chat 模型试用限流为 20 次/分钟。",
+      "validity": "按月刷新，但仍是试用权限；不等于商业免费档。",
+      "claim_steps": "注册账号 → 在 API Keys 页获取 Trial Key。",
+      "requirements": "试用 Key 禁止用于生产或商业用途；需付费 Production Key 才能进入对应生产流程。",
+      "regions": "地区资格待核实。",
+      "payment_method_required": null,
+      "payment_notes": "本轮未核实注册是否需支付方式。",
+      "commercial_use": false,
+      "commercial_notes": "Trial Key 禁止生产或商业用途；本资料本身仍可商业再利用。",
+      "api_base_urls": [
+        "https://api.cohere.ai/compatibility/v1"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方限流页确认配额；官方定价 FAQ 确认试用 Key 不得用于生产/商业。",
+        "pending": [
+          "地区和注册支付要求。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Rate limits",
+          "url": "https://docs.cohere.com/docs/rate-limits"
+        },
+        {
+          "label": "OpenAI 兼容",
+          "url": "https://docs.cohere.com/docs/compatibility-api"
+        },
+        {
+          "label": "定价",
+          "url": "https://cohere.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "github-models",
+      "name": "GitHub Models",
+      "kind": "hosted_service",
+      "category": "retired",
+      "offer": "GitHub Models 已退役；不能再按原稿的免费原型服务接入。",
+      "validity": "官方说明自 2026-07-30 起完全退役。",
+      "claim_steps": "无领取入口；保留此条帮助识别旧教程。",
+      "requirements": "Playground、模型目录、推理 API、BYOK 均已不可用。",
+      "regions": "不适用。",
+      "payment_method_required": null,
+      "payment_notes": "已退役。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "原稿端点 https://models.github.ai/inference 已不应作为接入地址。",
+      "cautions": "原稿中的 PAT 权限、15 RPM/150 RPD 等已是历史描述。",
+      "verification": {
+        "status": "documented",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "GitHub 官方文档明确列出退役日期及受影响功能。",
+        "pending": []
+      },
+      "sources": [
+        {
+          "label": "文档",
+          "url": "https://docs.github.com/en/github-models/prototyping-with-ai-models"
+        },
+        {
+          "label": "Blog",
+          "url": "https://github.blog/ai-and-ml/llms/solving-the-inference-problem-for-open-source-ai-projects-with-github-models/"
+        }
+      ]
+    },
+    {
+      "id": "aliyun",
+      "name": "阿里云百炼 Model Studio",
+      "kind": "hosted_service",
+      "category": "trial",
+      "offer": "参与新人活动的模型通常各有 100 万 Token；不同模型额度独立，不保证所有模型参与。",
+      "validity": "90 天，从服务开通、模型发布或申请通过中的较晚时间起算；旧账号可能不同。",
+      "claim_steps": "首次开通华北2（北京）百炼 → 同意协议自动获赠 → 查看模型余量 → 使用通用 API Key。",
+      "requirements": "官方称免费额度无需实名；实名账号耗尽后会转按量付费，建议开免费额度用完即停。",
+      "regions": "只有华北2（北京）地域模型享受该新人额度。",
+      "payment_method_required": null,
+      "payment_notes": "领取无需购买产品；绑卡要求未实测；避免将此与付费开通混淆。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://dashscope.aliyuncs.com/compatible-mode/v1"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "Token Plan/Coding Plan 专属 Key 不消耗新人额度；免费额度不覆盖 Batch、部署、存储等费用。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方新人文档确认通常 100 万 Token/模型、90 天、北京地域和领取规则。",
+        "pending": [
+          "账号实际余额与目标模型资格。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "新人免费额度",
+          "url": "https://help.aliyun.com/zh/model-studio/new-free-quota"
+        },
+        {
+          "label": "OpenAI 兼容",
+          "url": "https://help.aliyun.com/zh/model-studio/compatibility-of-openai-with-dashscope"
+        }
+      ]
+    },
+    {
+      "id": "baidu",
+      "name": "百度千帆",
+      "kind": "hosted_service",
+      "category": "unverified",
+      "offer": "原稿称新人可获选定模型体验 Token；本轮未确认当前赠额。",
+      "validity": "数量、期限和活动资格待核实。",
+      "claim_steps": "注册千帆 → 查看当前新人权益与模型 → 获取对应 API Key。",
+      "requirements": "原稿称国内实名；具体要求与模型 code 需按当前控制台确认。",
+      "regions": "中国大陆平台；其他地区条件待核实。",
+      "payment_method_required": null,
+      "payment_notes": "支付方式要求待核实。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://qianfan.baidubce.com/v2"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "不要沿用原稿中已经退役的旧模型名称。",
+      "verification": {
+        "status": "unverified",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": null,
+        "scope": "官方快速开始可读，但不足以证明新人赠额。",
+        "pending": [
+          "新人赠额、有效期、认证及当前模型 ID。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "快速开始",
+          "url": "https://cloud.baidu.com/doc/qianfan/s/rmh4stn9m"
+        },
+        {
+          "label": "OpenAI 兼容",
+          "url": "https://cloud.baidu.com/doc/qianfan/s/Hmh4suq26"
+        }
+      ]
+    },
+    {
+      "id": "spark",
+      "name": "讯飞星火 Spark",
+      "kind": "hosted_service",
+      "category": "free_tier",
+      "offer": "HTTP 官方文档列 Lite 支持免费使用；QPS、每日限额未统一确认。",
+      "validity": "当前型号政策，不承诺永久。",
+      "claim_steps": "注册讯飞开放平台 → 开通 Spark Lite → 获取 HTTP 服务的 APIPassword。",
+      "requirements": "选择 model=lite；APIPassword 与其他 SDK 凭据可能不同。",
+      "regions": "中国大陆平台；实名及其他地区资格待核实。",
+      "payment_method_required": null,
+      "payment_notes": "绑卡/充值要求待核实。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://spark-api-open.xf-yun.com/v1"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方 HTTP 文档确认 Lite 免费及 model=lite。",
+        "pending": [
+          "当前 QPS、日限、认证条件。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "HTTP 文档",
+          "url": "https://www.xfyun.cn/doc/spark/HTTP%E8%B0%83%E7%94%A8%E6%96%87%E6%A1%A3.html"
+        },
+        {
+          "label": "产品页",
+          "url": "https://xhspdup.xfyun.cn/sparkapi"
+        }
+      ]
+    },
+    {
+      "id": "gitee-ai",
+      "name": "Gitee AI / 模力方舟",
+      "kind": "hosted_service",
+      "category": "conditional",
+      "offer": "免费体验访问令牌提供每用户每天 100 次体验；正式调用标为免费的 API 需先购买任意金额全模型资源包。",
+      "validity": "体验按日；正式免费模型名单及规则可变。",
+      "claim_steps": "先在模型广场选择免费体验访问令牌；正式 API 按购买资源包后的令牌规则开通。",
+      "requirements": "广场体验与正式 Serverless API 是不同权限，不能直接把体验次数当生产配额。",
+      "regions": "国内平台；具体地区资格待核实。",
+      "payment_method_required": null,
+      "payment_notes": "正式免费 API 要先购买资源包；是否必须绑银行卡未核实。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [
+        "https://api.moark.com/v1"
+      ],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方 FAQ 分别说明每日 100 次体验与正式免费 API 的购买前提。",
+        "pending": [
+          "免费体验是否适用于具体外部 API 场景及商业使用条件。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "FAQ",
+          "url": "https://ai.gitee.com/docs/FAQ"
+        },
+        {
+          "label": "新手",
+          "url": "https://ai.gitee.com/docs/getting-started"
+        }
+      ]
+    },
+    {
+      "id": "litellm",
+      "name": "LiteLLM",
+      "kind": "self_hosted_gateway",
+      "category": "gateway",
+      "offer": "自建统一接口与路由，不提供免费算力。",
+      "validity": "上游额度与期限分别适用；自建不会延长试用期。",
+      "claim_steps": "阅读项目文档 → 本地审查配置 → 自行部署 → 按上游规则接入。",
+      "requirements": "托管所需环境与下游服务自行准备；原稿称支持多家供应商，具体数量不固定。",
+      "regions": "由部署位置和各上游条款决定。",
+      "payment_method_required": null,
+      "payment_notes": "工具不等于算力供应商；部署、上游调用仍可能有费用。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "部署后才有自己的入口地址；本清单不提供公共代理。",
+      "cautions": "本仓库仅链接第三方项目，不复制代码、不替其重新授权；遵守其许可证和上游条款。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方项目站可读。",
+        "pending": [
+          "上游最新目录、运行兼容性与安全性均未实测。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "litellm.ai",
+          "url": "https://www.litellm.ai/"
+        }
+      ]
+    },
+    {
+      "id": "freellmpool",
+      "name": "freellmpool",
+      "kind": "self_hosted_gateway",
+      "category": "gateway",
+      "offer": "自建多供应商路由与故障转移，本身不拥有免费算力。",
+      "validity": "上游额度与期限分别适用；自建不会延长试用期。",
+      "claim_steps": "阅读项目文档 → 本地审查配置 → 自行部署 → 按上游规则接入。",
+      "requirements": "项目页称部分上游支持无 Key，其他上游仍需自备 Key；是否可用取决于上游。",
+      "regions": "由部署位置和各上游条款决定。",
+      "payment_method_required": null,
+      "payment_notes": "工具不等于算力供应商；部署、上游调用仍可能有费用。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "部署后才有自己的入口地址；本清单不提供公共代理。",
+      "cautions": "本仓库仅链接第三方项目，不复制代码、不替其重新授权；遵守其许可证和上游条款。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "项目页确认存在无需 Key 的上游路线，修正原稿“全部需 Key”的绝对表述。",
+        "pending": [
+          "上游最新目录、运行兼容性与安全性均未实测。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "项目页",
+          "url": "https://0xzr.github.io/freellmpool/"
+        }
+      ]
+    },
+    {
+      "id": "freellmapi-extended",
+      "name": "FreeLLMAPI-Extended",
+      "kind": "self_hosted_gateway",
+      "category": "gateway",
+      "offer": "自建免费档聚合与自动回退，不保证上游免费服务持续可用。",
+      "validity": "上游额度与期限分别适用；自建不会延长试用期。",
+      "claim_steps": "阅读项目文档 → 本地审查配置 → 自行部署 → 按上游规则接入。",
+      "requirements": "按项目文档准备运行环境和所需上游 Key。",
+      "regions": "由部署位置和各上游条款决定。",
+      "payment_method_required": null,
+      "payment_notes": "工具不等于算力供应商；部署、上游调用仍可能有费用。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "部署后才有自己的入口地址；本清单不提供公共代理。",
+      "cautions": "本仓库仅链接第三方项目，不复制代码、不替其重新授权；遵守其许可证和上游条款。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "项目 README 可读；未安装、未运行。",
+        "pending": [
+          "上游最新目录、运行兼容性与安全性均未实测。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/SeyhmusKaya/freellmapi-extended"
+        }
+      ]
+    },
+    {
+      "id": "cn-freellm",
+      "name": "cn-freellm",
+      "kind": "self_hosted_gateway",
+      "category": "gateway",
+      "offer": "自建国内多模型统一入口与故障转移，不提供额外免费额度。",
+      "validity": "上游额度与期限分别适用；自建不会延长试用期。",
+      "claim_steps": "阅读项目文档 → 本地审查配置 → 自行部署 → 按上游规则接入。",
+      "requirements": "按所选上游准备账号和 Key；具体免费资格分别核对。",
+      "regions": "由部署位置和各上游条款决定。",
+      "payment_method_required": null,
+      "payment_notes": "工具不等于算力供应商；部署、上游调用仍可能有费用。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "部署后才有自己的入口地址；本清单不提供公共代理。",
+      "cautions": "本仓库仅链接第三方项目，不复制代码、不替其重新授权；遵守其许可证和上游条款。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "项目 README 可读；未安装、未运行。",
+        "pending": [
+          "上游最新目录、运行兼容性与安全性均未实测。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/dawn0731/cn-freellm"
+        }
+      ]
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "kind": "hosted_service",
+      "category": "non_free_reference",
+      "offer": "原稿引用的 get-credits 活动页面明确标为已过期；未确认通用免费档。",
+      "validity": "该活动已过期；其他活动需另行核实。",
+      "claim_steps": "仅在官方当前活动页确认有效资格后申请。",
+      "requirements": "某一活动过期不能推断所有未来促销均无效。",
+      "regions": "地区待核实。",
+      "payment_method_required": null,
+      "payment_notes": "绑卡与注册额度待核实。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方 get-credits 页面明确显示 Promotion expired。",
+        "pending": [
+          "其他现行试用或专项项目。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "get-credits 页",
+          "url": "https://www.together.ai/get-credits"
+        }
+      ]
+    },
+    {
+      "id": "fireworks",
+      "name": "Fireworks",
+      "kind": "hosted_service",
+      "category": "non_free_reference",
+      "offer": "Serverless 推理按预付积分计费；原稿约 $1 注册赠额未核实。",
+      "validity": "未确认通用推理免费额度或期限。",
+      "claim_steps": "如有活动，先确认其是否覆盖推理 API，再注册领取。",
+      "requirements": "训练活动的限时免费不等于推理 API 免费。",
+      "regions": "地区待核实。",
+      "payment_method_required": true,
+      "payment_notes": "官方推理定价说明添加支付方式后购买积分；赠额支付要求另行确认。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方价格页确认推理按预付用量计费。",
+        "pending": [
+          "注册赠额是否存在及其期限。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "官方定价",
+          "url": "https://fireworks.ai/pricing"
+        }
+      ]
+    },
+    {
+      "id": "deepinfra",
+      "name": "DeepInfra",
+      "kind": "hosted_service",
+      "category": "non_free_reference",
+      "offer": "官方价格页按用量计费；未确认面向所有人的免费推理额度。",
+      "validity": "专项活动/DeepStart 资格及期限待核实。",
+      "claim_steps": "查看官方定价与专项申请条件后决定是否开通。",
+      "requirements": "不能把申请制支持当作人人可领的免费额度。",
+      "regions": "地区待核实。",
+      "payment_method_required": null,
+      "payment_notes": "原稿称需绑卡/预付，本轮未确认统一要求。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方价格页可读，展示按用量计费。",
+        "pending": [
+          "DeepStart 申请资格、免费额度与支付条件。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "pricing",
+          "url": "https://deepinfra.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "cerebras",
+      "name": "Cerebras Inference",
+      "kind": "hosted_service",
+      "category": "trial",
+      "offer": "添加有效支付方式后可获一次性 $5 促销积分。",
+      "validity": "激活后 30 天，到期或用完暂停，除非另行购买 PayGo 积分。",
+      "claim_steps": "注册 → 阅读活动条款 → 验证有效支付方式 → 查看促销余额及到期日。",
+      "requirements": "不可转让；重复账号或滥用可被撤销；不是无卡永久免费档。",
+      "regions": "地区资格待核实。",
+      "payment_method_required": true,
+      "payment_notes": "官方要求有效支付方式；活动说明不会自动转入付费使用。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方定价页确认 $5、30 天、支付验证及到期暂停。",
+        "pending": [
+          "账号资格及实际模型限流。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "pricing",
+          "url": "https://www.cerebras.ai/pricing"
+        },
+        {
+          "label": "rate limits",
+          "url": "https://inference-docs.cerebras.ai/support/rate-limits"
+        }
+      ]
+    },
+    {
+      "id": "sambanova",
+      "name": "SambaNova Cloud",
+      "kind": "hosted_service",
+      "category": "non_free_reference",
+      "offer": "套餐虽名为 Free，官方页面要求添加支付方式并购买积分后才能首次请求。",
+      "validity": "购买积分的期限与活动以控制台为准。",
+      "claim_steps": "注册 → 检查当前账单规则；不要把套餐名当作零成本推理。",
+      "requirements": "未确认无需购买的通用免费调用。",
+      "regions": "地区待核实。",
+      "payment_method_required": true,
+      "payment_notes": "官方要求添加支付方式并购买积分。",
+      "commercial_use": null,
+      "commercial_notes": "资料可商用不等于服务可商用；以服务条款和模型许可为准。",
+      "api_base_urls": [],
+      "api_notes": "原稿提供的接入线索；未持密钥调用，接入前核对官方文档。",
+      "cautions": "免费政策、模型和限流可能变化；不要以本清单承诺服务可用性。",
+      "verification": {
+        "status": "partial",
+        "last_checked_at": "2026-10-17",
+        "last_verified_at": "2026-10-17",
+        "scope": "官方 Plans 页面明确说明首次请求需要购积分。",
+        "pending": [
+          "是否存在适用于个人账号的独立赠额活动。"
+        ]
+      },
+      "sources": [
+        {
+          "label": "plans",
+          "url": "https://cloud.sambanova.ai/plans"
+        }
+      ]
+    }
+  ]
+}
